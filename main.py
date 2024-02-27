@@ -19,6 +19,8 @@ def get_character_counts(text):
     character_counts = {}
     for character in text:
         character = character.lower()
+        if character.isalpha() == False:
+            continue
         if character in character_counts:
             character_counts[character] += 1
         else:
