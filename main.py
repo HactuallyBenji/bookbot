@@ -18,6 +18,7 @@ def get_word_count(text):
 def get_character_counts(text):
     character_counts = {}
     for character in text:
+        character = character.lower()
         if character in character_counts:
             character_counts[character] += 1
         else:
