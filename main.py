@@ -6,7 +6,7 @@ def main():
 
     character_counts = get_character_counts(file_contents)
     print(f"The text has many characters. Here's are the frequencies of each.")
-    print(character_counts)
+    show_character_counts(character_counts)
 
 def get_text(file_path):
     with open(file_path) as file:
@@ -26,6 +26,10 @@ def get_character_counts(text):
         else:
             character_counts[character] = 1
     return character_counts
+
+def show_character_counts(character_counts):
+    for character, count in character_counts.items():
+        print(f"{character}: {count}")
 
 if __name__ == "__main__":
     main()
