@@ -5,7 +5,6 @@ def main():
     print(f"The text contains {word_count} words.")
 
     character_counts = get_character_counts(file_contents)
-    print(f"The text has many characters. Here's are the frequencies of each.")
     show_character_counts(character_counts)
 
 def get_text(file_path):
@@ -28,8 +27,9 @@ def get_character_counts(text):
     return character_counts
 
 def show_character_counts(character_counts):
-    for character, count in character_counts.items():
-        print(f"{character}: {count}")
+    sorted_character_counts = sorted(character_counts.items(), key=lambda x: x[1], reverse=True)
+    for character, count in sorted_character_counts:
+        print(f"The '{character}' character was seen {count} times.")
 
 if __name__ == "__main__":
     main()
